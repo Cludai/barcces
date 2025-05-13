@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BARCCES Contacta</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp:wght@700&family=Chivo+Mono&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+    
+    :root {
+      --fosc: #231f20;
+      --vermell: #bb4430;
+      --blau: #7ebdc2;
+      --groc: #f3dfa2;
+      --beige: #efe6dd;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Chivo Mono', monospace;
+      background-color: var(--beige);
+      color: var(--fosc);
+    }
+    
+    header, footer {
+      background-color: var(--vermell);
+      color: var(--beige);
+    }
+    
+    h1, h2 {
+      font-family: 'Tilt Warp', sans-serif;
+      text-align: center;
+      margin: 2rem 0 1rem;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+    }
+    
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    header .logo img {
+      height: 40px;
+      width: auto;
+      max-width: 100%;
+    }
+    
+    .menu nav {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .menu a.button {
+      padding: 0.5rem 1rem;
+      background-color: var(--beige);
+      color: var(--vermell);
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    
+    .menu a.button:hover {
+      background-color: var(--groc);
+    }
+    
+    .contact-wrapper {
+      max-width: 600px;
+      margin: 3rem auto;
+      background-color: var(--blau);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    
+    .contact-form label {
+      display: block;
+      margin: 1rem 0 0.3rem;
+      font-weight: bold;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    
+    .contact-form button {
+      display: block;
+      margin: 2rem auto 0;
+      padding: 0.8rem 1.5rem;
+      background-color: var(--vermell);
+      color: var(--beige);
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .contact-form button:hover {
+      background-color: #9e3e2e;
+    }
+    
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    .popup-content {
+      position: relative;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+    
+    .popup-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      color: var(--vermell);
+      cursor: pointer;
+    }
+    
+    footer {
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+    }
+    
+    .footer-links a,
+    .footer-icons a {
+      margin-right: 10px;
+      color: var(--beige);
+      text-decoration: none;
+    }
+    
+    .footer-icons img {
+      width: 25px;
+      height: auto;
+    }
+    
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    
+      .menu nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+      }
+    
+      .menu a.button {
+        width: 100%;
+        text-align: center;
+        padding: 0.7rem;
+      }
+    
+      .contact-wrapper {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+      }
+    
+      .popup-content {
+        width: 90%;
+        font-size: 0.9rem;
+      }
+    
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+    
+      .footer-icons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 0.5rem;
+      }
+    }
+    </style>
+    
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="recursos/6.png" alt="Logo">
+    </div>
+    <div class="menu">
+      <nav>
+        <a href="index.html" class="button">Inici</a>
+      </nav>
+    </div>
+  </header>
+  
+
+  <section class="contact-wrapper">
+    <h1>Contacta amb Nosaltres</h1>
+    <form id="contact-form" class="contact-form"
+      action="mailto:cloritej@uoc.edu"
+      method="POST"
+      enctype="text/plain">
+      <label for="name">Nom:</label>
+      <input type="text" id="name" name="Nom" required>
+
+      <label for="email">Correu electrònic:</label>
+      <input type="email" id="email" name="Correu" required>
+
+      <label for="subject">Assumpte:</label>
+      <input type="text" id="subject" name="Assumpte" required>
+
+      <label for="message">Missatge:</label>
+      <textarea id="message" name="Missatge" required></textarea>
+
+      <button type="submit">Envia</button>
+    </form>
+  </section>
+
+  <div id="popup" class="popup" onclick="closePopup()">
+    <div class="popup-content" onclick="event.stopPropagation()">
+      <span class="popup-close" onclick="closePopup()">&times;</span>
+      <h3>Hem rebut el teu missatge correctament!</h3>
+      <p>Respondrem en un plaç de 24h - 48h.</p>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const popup = document.getElementById('popup');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      window.location = `mailto:cloritej@uoc.edu
+?subject=${encodeURIComponent(form.Assumpte.value)}
+&body=${encodeURIComponent(
+  'Nom: ' + form.Nom.value + '\n' +
+  'Correu: ' + form.Correu.value + '\n\n' +
+  form.Missatge.value
+)}`;
+      showPopup();
+      form.reset();
+    });
+
+    function showPopup() {
+      popup.style.display = 'flex';
+    }
+    function closePopup() {
+      popup.style.display = 'none';
+    }
+  </script>
+
+  <footer>
+    <div class="footer-links">
+      <a href="AIP.html">Accessibilitat i polítiques</a>
+      <a href="contacta.html">Contacte / Feedback</a>
+    </div>
+    <div class="footer-icons">
+      <a href="#"><img src="recursos/8.png" alt="LinkedIn"></a>
+      <a href="#"><img src="recursos/9.png" alt="Tancar"></a>
+      <a href="#"><img src="recursos/10.png" alt="Instagram"></a>
+    </div>
+  </footer>
+</body>
+</html>
