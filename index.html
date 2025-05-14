@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>BARCCES Home</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp:wght@700&family=Chivo+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
@@ -13,7 +12,7 @@
   --vermell: #bb4430;
   --blau: #7ebdc2;
   --groc: #f3dfa2;
-  --beige: #efe6dd;
+  --beige: #FFF6EB;
 }
 
 body {
@@ -675,7 +674,7 @@ const data = [
         "lng": 2.15028,
         "categoria": "font",
         "districte": "sants-montjuic",
-        "accessibilitat": [],
+        "accessibilitat": ["braille", "cadires-de-rodes"],
         "ubicacio": "prop",
         "puntuacio": 4
       },
@@ -700,7 +699,7 @@ const data = [
         "puntuacio": 3
       },
       {
-        "nom": "Refugi Climàtic Parc de la Ciutadella",
+        "nom": "Refugi Climàtic Ciutadella",
         "lat": 41.38847,
         "lng": 2.18658,
         "categoria": "refugi",
@@ -715,7 +714,7 @@ const data = [
         "lng": 2.16582,
         "categoria": "refugi",
         "districte": "gracia",
-        "accessibilitat": ["braile"],
+        "accessibilitat": ["braille"],
         "ubicacio": "parc",
         "puntuacio": 4
       },
@@ -740,12 +739,12 @@ const data = [
         "puntuacio": 4
       },
       {
-        "nom": "Lavabos Públics Parc de la Ciutadella",
+        "nom": "Lavabos Públics Ciutadella",
         "lat": 41.38890,
         "lng": 2.18412,
         "categoria": "lavabo",
         "districte": "ciutat-vella",
-        "accessibilitat": [],
+        "accessibilitat": ["canviador"],
         "ubicacio": "prop",
         "puntuacio": 3
       },
@@ -760,7 +759,7 @@ const data = [
         "puntuacio": 5
       },
       {
-        "nom": "Wi-Fi Públic Plaça Universitat",
+        "nom": "Wi-Fi Públic Universitat",
         "lat": 41.38640,
         "lng": 2.16452,
         "categoria": "wifi",
